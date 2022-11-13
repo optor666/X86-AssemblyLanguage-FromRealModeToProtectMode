@@ -13,3 +13,7 @@
 ## 作者联系方式
 1. Email：leechung@126.com
 2. Blog: http://blog.163.com/leechung@126
+
+
+## 学习记录
+第 3 章 汇编语言和汇编软件
