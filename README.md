@@ -11,6 +11,11 @@
 5. 不借助于 BIOS、DOS、Windows、Linux 或任何其他软件支持的情况下，直接使用汇编语言控制硬件：显示字符、读取硬盘数据、控制其他硬件
 6. 完全抛弃 BIOS 中断和 DOS 中断，直接访问硬件
 
+## 出版社
+1. 书籍主页1：https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=58930
+2. 书籍主页2：https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=34945 （有两个主页，定价也不一样，应该是个 bug）
+3. 随书配套资源：https://www.hxedu.com.cn/hxedu/hg/book/bookInfo.html?code=TP187990
+
 ## 作者联系方式
 1. Email：leechung@126.com
 2. Blog: http://blog.163.com/leechung@126
