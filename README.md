@@ -1,6 +1,7 @@
 # X86 汇编语言 —— 从实模式到保护模式
 ## 相关书籍
 1. 《穿越计算机的迷雾》
+2. [《x86 PC汇编语言、设计与接口（第五版）》](https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=21715)
 
 ## 本书环境
 1. NASM 汇编语言编译器
