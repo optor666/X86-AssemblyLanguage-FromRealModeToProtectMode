@@ -54,3 +54,6 @@
 
 ## 学习记录
 第 3 章 汇编语言和汇编软件
+
+# VirtualBox 
+1. User Manual: /Applications/VirtualBox.app/Contents/MacOS/UserManual.pdf ，菜单栏 - Help - Contents...
