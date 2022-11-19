@@ -12,6 +12,23 @@
 6. 完全抛弃 BIOS 中断和 DOS 中断，直接访问硬件
 7. 使用 nasm 汇编器汇编后的机器代码，除了处理器能够识别的机器代码外，别的任何东西都不包含。这样一来，因为缺少操作系统所需要的加载和重定位信息，它就很难在 Windows、DOS 和 Linux 上作为一个普通的应用程序运行
 
+## 出版社
+1. 书籍主页1：https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=58930
+2. 书籍主页2：https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=34945 （有两个主页，定价也不一样，应该是个 bug）
+3. 随书配套资源：https://www.hxedu.com.cn/hxedu/hg/book/bookInfo.html?code=TP187990
+
+## 作者联系方式
+1. Email：leechung@126.com
+2. Blog: http://blog.163.com/leechung@126
+
+## 网络相关资源
+### 豆瓣
+1. 豆瓣主页：https://book.douban.com/subject/20492528/ ，有相关其他书籍推荐
+2. 豆友 jeff 笔记：https://book.douban.com/annotation/31264059/ ，关于 bochs GUI 版本、FixVhdWr 在 MacOS 系统上的命令行替代版本
+
+### B 站
+1. 作者本人视频课程：https://www.bilibili.com/video/BV1xE411N74T
+
 ## 基础背景
 ### CPU
 1. 在处理器众多引脚中，有一个是 RESET，用于接受复位信号。每当处理器加电，或者 RESET 引脚的电平由低到高时，处理器都会执行一个硬件初始化，以及一个可选的内部自测试（Build-in Self-Test，BIST），然后将内部所有寄存器内容初始化到一个预置的状态。
@@ -38,23 +55,11 @@
 10. 硬盘的读写是以扇区为最小单位的。所以，无论什么时候，要从硬盘读数据，或者向硬盘写数据，至少得是1个扇区。
 11. 在VHD规范里，每个扇区是512字节。VHD文件一开始的512字节，就对应着物理硬盘的0面0道1扇区。然后，VHD文件的第二个512字节，对应着0面0道2扇区，后面的依次类推，一直对应到0面0道n扇区。这里，n等于每磁道的扇区数。再往后，因为硬盘的访问是按柱面进行的，所以，在VHD文件中，紧接着前面的数据块，下一个数据块对应的是1面0道1扇区，就这样一直往后排列，当把第一个柱面全部对应完后，再从第二个柱面开始对应。
 
-
-
-
 ### 虚拟硬盘
 1. 因为虚拟硬盘实际上是一个文件，所以。通常来说，它的格式体现在它的文件扩展名上。
 2. VHD 规范最早起源于 Connectix 公司的虚拟机软件 Connectix Virtual PC， 2003 年，微软公司收购了它并改名为 Microsoft Virtual PC。 2006 年，薇软公司正式发布了 VHD 虚拟硬盘格式规范。在本书配套的源代码和工具包里，有该规范的文档。事实上，即使是 VHD，也分为两种类型：固定尺寸的和动态分配的。一个固定尺寸的 VHD，它对应的文件尺寸和该虚拟硬盘的容量是相同的，或者说是一次性分配够了的。比如，一个 2GB 的 VHD 虚拟硬盘，它对应的文件大小也是 2GB。注意，本书以及本书配套的工具仅支持固定尺寸的 VHD。
 3. VDL 是 VitualBox 自己的虚拟硬盘规范。
 4. VMDK 是 VMWare 的虚拟硬盘规范。
-
-## 出版社
-1. 书籍主页1：https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=58930
-2. 书籍主页2：https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=34945 （有两个主页，定价也不一样，应该是个 bug）
-3. 随书配套资源：https://www.hxedu.com.cn/hxedu/hg/book/bookInfo.html?code=TP187990
-
-## 作者联系方式
-1. Email：leechung@126.com
-2. Blog: http://blog.163.com/leechung@126
 
 
 ## 学习记录
