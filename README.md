@@ -19,7 +19,7 @@
 
 ## 作者联系方式
 1. Email：leechung@126.com
-2. Blog: http://blog.163.com/leechung@126
+2. Blog: http://www.lizhongc.com/
 
 ## 网络相关资源
 ### 豆瓣
