@@ -1,2 +1,5 @@
 *.bin
 *.lst
+bochsdebuglog.txt
+bochslog.txt
+bochsout.txt
