@@ -12,17 +12,28 @@ SECTION mbr align=16 vstart=0x7c00
 	mov ax,0
 	mov ss,ax
 	mov sp,ax
+	
+	; cs:0x0000
+	; ds:0x0000
+	; ss:0x0000
+	; es:0x0000
+	; sp:0x0000
 
 	mov ax,[cs:phy_base] ; 计算用于加载用户程序的逻辑段地址
 	mov dx,[cs:phy_base+0x02]
+	; ax:0x0000
+	; dx:0x0001
 	mov bx,16
 	div bx
+	; ax:0x1000
+	; dx:0x0000
 	mov ds,ax ; 令 DS 和 ES 指向该段以进行操作
 	mov es,ax
 	; cs:0x0000
 	; ds:0x1000
-	; ss:0x0000
 	; es:0x1000
+	; ss:0x0000
+	; sp:0x0000
 
 	; 以下读取程序的起始部分
 	xor di,di
