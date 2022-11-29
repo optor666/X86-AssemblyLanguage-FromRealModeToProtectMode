@@ -44,6 +44,8 @@ SECTION mbr align=16 vstart=0x7c00
 	; 以下判断整个程序有多大
 	mov dx,[2] ; ds:0x1000
 	mov ax,[0]
+	; dx:0x0000
+	; ax:0x03c0 = 960
 	mov bx,512
 	div bx
 	cmp dx,0
@@ -73,17 +75,22 @@ SECTION mbr align=16 vstart=0x7c00
 direct:
 	mov dx,[0x08]
 	mov ax,[0x06]
+	; dx=0x0000
+	; ax=0x0020
 	call calc_segment_base
 	mov [0x06],ax ; 回填修正后的入口点代码段基址
 
 	; 开始处理段重定位表
 	mov cx,[0x0a] ; 需要重定位的项目数量
+	; cx=0x0005
 	mov bx,0x0c ; 重定位表首地址
 
 realloc:
 	mov dx,[bx+0x02] ; 32位地址的高16位
 	mov ax,[bx]
 	call calc_segment_base
+	; ax=0x1002
+	; ax=0x100f
 	mov [bx],ax ; 回填段的基址
 	add bx,4 ; 下一个重定位项（每项占4个字节）
 	loop realloc
@@ -151,12 +158,18 @@ calc_segment_base: ; 计算 16 位段地址
 					; 返回：AX=16位段基地址
 	push dx
 
+	; dx=0x0000
+	; ax=0x0020
 	add ax,[cs:phy_base]
 	adc dx,[cs:phy_base+0x02]
+	; dx=0x0001
+	; ax=0x0020
 	shr ax,4
 	ror dx,4
 	and dx,0xf000
 	or ax,dx
+	; dx=0x1000
+	; ax=0x1002
 
 	pop dx
 	ret
