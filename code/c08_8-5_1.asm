@@ -1,7 +1,7 @@
-; nasm -f bin c08.asm -l c08.lst -o c08.bin
-; dd if=c08.bin of='/Users/clearbug/VirtualBox VMs/LEARN-ASM/LEARN-ASM.vhd' bs=512 count=2 oseek=100 conv=notrunc
+; nasm -f bin c08_8-5_1.asm -l c08_8-5_1.lst -o c08_8-5_1.bin
+; dd if=c08_8-5_1.bin of='/Users/clearbug/VirtualBox VMs/LEARN-ASM/LEARN-ASM.vhd' bs=512 count=2 oseek=100 conv=notrunc
          ;代码清单8-2
-         ;文件名：c08.asm
+         ;文件名：c08_8-5_1.asm
          ;文件说明：用户程序 
          ;创建日期：2011-5-5 18:17
          
@@ -146,11 +146,9 @@ put_char:                                ;显示一个字符
          mov bx,msg0
          call put_string                  ;显示第一段信息 
 
-         push word [es:code_2_segment]
-         mov ax,begin
-         push ax                          ;可以直接push begin,80386+
-         
-         retf                             ;转移到代码段2执行 
+		 mov bx,[es:code_2_segment]
+		 mov [code_2_begin+2],bx
+		 call far [code_2_begin]
          
   continue:
          mov ax,[es:data_2_segment]       ;段寄存器DS切换到数据段2 
@@ -173,6 +171,7 @@ SECTION code_2 align=16 vstart=0          ;定义代码段2（16字节对齐）
          
 ;===============================================================================
 SECTION data_1 align=16 vstart=0
+	code_2_begin dw begin,0x0000
 
     msg0 db '  This is NASM - the famous Netwide Assembler. '
          db 'Back at SourceForge and in intensive development! '
