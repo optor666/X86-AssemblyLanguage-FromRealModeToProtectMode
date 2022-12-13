@@ -24,12 +24,18 @@
 ## 网络相关资源
 ### 豆瓣
 1. 豆瓣主页：https://book.douban.com/subject/20492528/ ，有相关其他书籍推荐
-2. 豆友 jeff 笔记：https://book.douban.com/annotation/31264059/ ，关于 bochs GUI 版本、FixVhdWr 在 MacOS 系统上的命令行替代版本
-### 其他
-1. X86 指令集在线文档：https://www.felixcloutier.com/x86/index.html
 
 ### B 站
 1. 作者本人视频课程：https://www.bilibili.com/video/BV1xE411N74T
+
+### X86 指令集
+1. X86 指令集在线文档：https://www.felixcloutier.com/x86/index.html
+
+### 大学相关课程
+1. 中科大-微机原理课程：http://home.ustc.edu.cn/~ytwang/
+
+### 其他读者笔记答案
+1. PhiliAI: https://www.cnblogs.com/Philip-Tell-Truth/p/5317983.html
 
 ## 基础背景
 ### CPU
