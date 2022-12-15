@@ -78,7 +78,7 @@ put_char:                                ;显示一个字符
          mov bx,ax
          jmp .set_cursor
 
-; 
+; 判断是否为换行符，若是，则将光标置为下一行相同列并退出；否则，执行后续流程
  .put_0a:
          cmp cl,0x0a                     ;换行符？
          jnz .put_other                  ;不是，那就正常显示字符 
@@ -95,6 +95,8 @@ put_char:                                ;显示一个字符
          shr bx,1
          add bx,1
 
+; bx 当前保存着光标位置。
+; 判断光标位置是否小于 2000，若是则直接设置光标位置并退出；否则，执行后续滚屏流程、再设置光标、然后退出
  .roll_screen:
          cmp bx,2000                     ;光标超出屏幕？滚屏
          jl .set_cursor
